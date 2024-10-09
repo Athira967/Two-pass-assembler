@@ -1,0 +1,76 @@
+
+
+Two-Pass Assembler Documentation
+
+Project Overview
+
+	The Two-Pass Assembler is a Java application designed to translate assembly language code into machine code. It implements a 	classic two-pass assembly algorithm, which processes the assembly source code in two stages: the first pass collects labels and 	their corresponding addresses, while the second pass generates the machine code. The application features a user-friendly 	graphical interface built with Swing, allowing users to load source files, view intermediate results, and examine the symbol and 	object code.
+
+Key Features
+
+	Two-Pass Assembly: Efficiently processes assembly code to produce machine code.
+
+	Symbol Table Management: Automatically generates and displays a symbol table for label resolution.
+
+	Opcode Table Loading: Supports dynamic loading of an opcode table from a file, allowing flexibility in assembly language 	specifications.
+
+	Intermediate Code Display: Provides a clear view of the intermediate representation during assembly.
+
+	Error Handling: Catches and displays errors such as duplicate labels and file read issues.
+
+	User Interface: A modern Swing-based UI with organized panels for various outputs (intermediate, symbol table, output, and object 	code).
+
+	Reset Functionality: Clears all fields to allow for fresh assembly runs without restarting the application.
+
+	Program Length Calculation: Automatically computes and displays the program length in hex format.
+
+Technology Stack
+
+	Language: Java
+	Libraries:
+	Swing: For building the graphical user interface.
+	AWT: For additional UI components and event handling.
+	File I/O: Java's standard file handling for reading source and opcode files.
+
+Project Structure
+
+The project is organized into a single class that encapsulates all functionality:
+
+twopass.java
+Main Class: Contains the main method to launch the application and setup the UI.
+UI Components:
+JFrame: Main window of the application.
+
+JTextArea: Multiple areas to display intermediate results, symbol table, program length, output, and object code.
+
+JPanel: Used for organizing UI components, including buttons and text areas.
+Key Methods:
+
+main(String[] args): Entry point for the application.
+
+createTextArea(String title): Helper method to create text areas with titles.
+
+loadInputFile(JFrame frame): Opens a file chooser to load assembly source files.
+
+loadOptabFile(JFrame frame): Opens a file chooser to load the opcode table.
+
+runAssembler(JFrame frame): Executes the assembly process.
+
+resetApplication(): Resets the application state.
+
+pass1(String inputFile): First pass of the assembly process, collecting labels and addresses.
+
+pass2(): Second pass, generating machine code from the intermediate representation.
+
+loadOptabFromFile(File file): Loads the opcode table from the specified file.
+
+loadSymtab(): Updates and displays the symbol table.
+
+File Handling
+
+Input Files: The program accepts two input files—an assembly source file and an opcode table file.
+Output: Displays results directly in the application UI, with no external file output implemented.
+
+Conclusion
+
+The Two-Pass Assembler serves as a practical tool for understanding the assembly process and the relationship between assembly and machine code. Its user-friendly interface and modular design make it an excellent educational resource for students and anyone interested in the intricacies of low-level programming.
